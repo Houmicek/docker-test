@@ -1,0 +1,10 @@
+pipeline {
+    agent {
+        label pipelineConfig.agents.linux.standard
+    }
+
+    options {
+        timeout(time: 5, unit: 'MINUTES')
+        timestamps()
+    }
+}
