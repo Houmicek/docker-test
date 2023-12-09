@@ -1,10 +1,11 @@
 pipeline {
-    agent {
-        echo 'start pipeline'
-    }
-
-    options {
-        timeout(time: 5, unit: 'MINUTES')
-        timestamps()
+    agent { docker { image 'ubuntu:latest' } }
+    stages {
+        stage('build') {
+            steps {
+                echo 'first step'
+                bash 'apt-get update'
+            }
+        }
     }
 }
