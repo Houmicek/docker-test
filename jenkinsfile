@@ -2,6 +2,7 @@ pipeline {
     agent { docker { image 'ubuntu:latest' } }
     stages {
         stage('build') {
+            heckout scm
             steps {
                 echo 'first step'
                 bash 'apt-get update'
